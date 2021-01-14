@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Applicant Details
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/start">Start</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/notes">Important Notes</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Applicant Details</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+
+Name of your organisation
+Contact name* & position
+Contact address
+Postcode
+Telephone number
+E-mail
+Website
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    {% call govukFieldset({
+      legend: {
+        text: "Applicant Details",
+        classes: "govuk-fieldset__legend--l",
+        isPageHeading: true
+      }
+    }) %}
+
+      {{ govukInput({
+        label: {
+          text: "Contact Name"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "contact-name",
+        name: "contact-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Position"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "position",
+        name: "position"
+      }) }}
+
+      {{ govukTextarea({
+        label: {
+          text: "Address"
+        },
+        id: "address",
+        name: "address"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Telephone Number"
+        },
+        id: "telephone-number",
+        name: "telephone-number",
+        type: "tel",
+        autocomplete: "tel",
+        classes: "govuk-input--width-10"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email"
+        },
+        id: "email",
+        name: "email",
+        type: "email",
+        autocomplete: "email",
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Website"
+        },
+        classes: "govuk-input--width-20",
+        id: "website",
+        name: "website"
+      }) }}
+
+    {% endcall %}
+
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Continue
+      </a>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}

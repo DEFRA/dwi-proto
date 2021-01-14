@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Important Notes
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/start">Start</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Important Notes</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Important Notes</h1>
+
+      <ol>
+        <li>This form should be used for applications for the approval of chemicals for use with water intended for human consumption under the appropriate regulations within the United Kingdom<sup>1</sup>. Separate forms are available from our <a href="http://www.dwi.gov.uk/drinking-water-products/advice-and-approval/index.htm">website</a> for other product types, including pipe systems & site applied products. Separate forms are available from our website for <a href="http://www.dwi.gov.uk/drinking-water-products/advice-and-approval/index.htm">other product types</a>, including chemical additives for use with water treatment systems.</li>
+        <li>We can only consider products that are offered for sale to UK public or private drinking water suppliers and will be used by them in the provision of drinking water supplies. Unlike the Water Regulations Advisory Scheme we cannot consider for approval products used in building water systems, or approve materials in isolation from their end use.</li>
+        <li>Many chemicals are now covered by published European Standards (ENs). You should note that DWI can no longer accept applications for approval of any product that consist of a single substance covered by an appropriate published EN standard. Products containing more than one substance, covered by appropriate BS EN standards are, however, subject to consideration by the Drinking Water Inspectorate.</li>
+        <li>Approval of biocides is now handled by the Health and Safety Executive (HSE); therefore DWI can only accept applications for approval of products containing biocidal substances once confirmation that HSE have approved that biocidal substance. Biocidal products in contact with drinking water do require approval if not covered by an appropriate BS EN standard.</li>
+        <li>Before you start completing this form, please read Advice Sheets Numbers 1, 2 and 3 - <a href="http://www.dwi.gov.uk/drinking-water-products/advice-and-approval/index.htm">available from our website</a>, together with the information in the shaded boxes.   If you fail to provide all the information necessary it is likely that your application will be delayed.</li>
+        <li>Please make sure you clearly mark any supporting information with the name of your organisation and the name of the product(s). Once allocated, always use the DWI reference no. in relation to this application for your product.</li>
+        <li>You must accept the responsibility for ensuring that ALL information required has been sent to us, either by yourself or directly by your suppliers. Incomplete applications will be returned to you for amendment and will not be cons.</li>
+      </ol>
+
+      <a href="/org-product" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
