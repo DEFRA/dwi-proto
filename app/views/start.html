@@ -8,6 +8,15 @@
   {{ govukHeader() }}
 {% endblock %}
 
+{% block pageScripts %}
+<script src="/public/javascripts/step-by-step-nav.js"></script>
+<script type="text/javascript">
+  var $element = $('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+  stepByStepNavigation.start($element)
+</script>
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -22,36 +31,201 @@
         <li>Approval Of Products For Use With Drinking Water</li>
       </ul>
 
-      <a href="/notes" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">Continue</a>
+      <a href="/notes" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">Continue</a>
     </div>
 
-    <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-third">
 
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#" class="govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
+    <div class="app-step-nav-related app-step-nav-related--singular">
+      <h2 class="app-step-nav-related__heading">
+        <span class="app-step-nav-related__pretitle">Part of</span>
+        <a href="/">
+          {{ serviceName }}
+        </a>
+      </h2>
+    </div>
 
+    <div id="step-by-step-navigation" data-module="gemstepnav" class="app-step-nav js-hidden" data-id="e01e924b-9c7c-4c71-8241-66a575c2f61f" data-show-text="show" data-hide-text="hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step" id="important-notes">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 1
+                    <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Important Notes
+              </span>
+            </h3>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-important-notes-1">
+            <p class="app-step-nav__paragraph">Applications for the approval of chemicals for use with water intended for human consumption</p>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step js-step" id="organisation-product" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="2">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 2
+                    <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Organisation & Product Name
+              </span>
+            </h3>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-organisation-product-2">
+            <p class="app-step-nav__paragraph">Lorem ipsum</p>
+          </div>
+
+        </li>
+        <li class="app-step-nav__step js-step" id="applicant-details" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="3">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 3
+                    <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Applicant Details
+              </span>
+            </h3>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-applicant-details-3">
+            <p class="app-step-nav__paragraph">Lorem ipsum</p>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step js-step" id="consultant-details" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="4">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--logic">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    and
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Consultant Details
+              </span>
+            </h3>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-consultant-details-4">
+            <p class="app-step-nav__paragraph">Lorem ipsum</p>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step js-step" id="product-details" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="5">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 4
+                    <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Product Details
+              </span>
+            </h3>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-product-details-5">
+            <p class="app-step-nav__paragraph">Lorem ipsum</p>
+
+            <ol class="app-step-nav__list " data-length="5">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="5.1" class="app-step-nav__link js-link" href="#">General Details – All Products</a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="5.2" class="app-step-nav__link js-link" href="#">Specific Product Details</a>
+              </li>
+            </ol>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step js-step" id="manufacturers-instructions" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="6">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 5
+                    <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Manufacturer’s Official Instructions For Use (IFU)
+              </span>
+            </h3>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-manufacturers-instructions-6">
+            <p class="app-step-nav__paragraph">Lorem ipsum</p>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step js-step" id="manufacturer">
+          <div class="app-step-nav__header js-toggle-panel" data-position="7">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 6
+                    <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Manufacturer
+              </span>
+            </h3>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-manufacturer-7">
+            <p class="app-step-nav__paragraph">Lorem ipsum</p>
+
+            <ol class="app-step-nav__list " data-length="1">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="7.1" class="app-step-nav__link js-link" href="#">Name of Manufacturer and Place of Manufacture</a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="7.2" class="app-step-nav__link js-link" href="#">Manufacturing Quality Management System</a>
+              </li>
+            </ol>
+          </div>
+        </li>
+      </ol>
     </div>
   </div>
+</div>
 {% endblock %}
