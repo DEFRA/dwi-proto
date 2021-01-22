@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Applicant Details
+  Product Details
 {% endblock %}
 
 {% block pageScripts %}
@@ -17,7 +17,7 @@
   <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        <a class="govuk-breadcrumbs__link" href="/">Home</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
         <a class="govuk-breadcrumbs__link" href="/start">Start</a>
@@ -29,7 +29,10 @@
         <a class="govuk-breadcrumbs__link" href="/org-product">Organisation & Product Name</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Applicant Details</a>
+        <a class="govuk-breadcrumbs__link" href="/applicant-details">Applicant Details</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Product Details</a>
       </li>
     </ol>
   </div>
@@ -38,97 +41,148 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    {% call govukFieldset({
-      legend: {
-        text: "Applicant Details",
-        classes: "govuk-fieldset__legend--l",
-        isPageHeading: true
-      }
-    }) %}
+      <h1 class="govuk-heading-l">Product Details</h1>
+      {% call govukFieldset({
+        legend: {
+          text: "General Details – All Products",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: false
+        }
+      }) %}
+        {{ govukInput({
+          label: {
+            text: "Product Name"
+          },
+          classes: "govuk-!-width-two-thirds",
+          hint: {
+            text: "Product must have a unique reference that does not infringe any registered trademark or have the same name(s) as any other approved product(s)."
+          },
+          id: "product-name",
+          name: "product-name"
+        }) }}
+      {% endcall %}
 
-      {{ govukInput({
-        label: {
-          text: "Contact Name"
-        },
-        classes: "govuk-!-width-two-thirds",
-        hint: {
-          text: "Person who will be taking responsibility for this application"
-        },
-        id: "contact-name",
-        name: "contact-name"
-      }) }}
+      {% call govukFieldset({
+        legend: {
+          text: "Type of product",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: false
+        }
+      }) %}
 
-      {{ govukInput({
-        label: {
-          text: "Position"
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "treatment-chemical",
+        name: "treatment-chemical",
+        fieldset: {
+          legend: {
+            text: "Treatment chemical for public water supply?",
+            isPageHeading: false
+          }
         },
-        classes: "govuk-!-width-two-thirds",
-        id: "position",
-        name: "position"
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
       }) }}
 
       {{ govukTextarea({
+        name: "treatment-detail-other",
+        id: "treatment-detail-other",
         label: {
-          text: "Address"
-        },
-        id: "address",
-        name: "address"
+          text: "Other, please explain"
+        }
       }) }}
+      {% endcall %}
+
+      {% call govukFieldset({
+        legend: {
+          text: "Description & function of the product",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: false
+        }
+      }) %}
 
       {{ govukInput({
         label: {
-          text: "Postcode"
-        },
-        classes: "govuk-input--width-10",
-        id: "address-postcode",
-        name: "address-postcode"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Telephone Number"
-        },
-        id: "telephone-number",
-        name: "telephone-number",
-        type: "tel",
-        autocomplete: "tel",
-        classes: "govuk-input--width-10"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Email"
-        },
-        id: "email",
-        name: "email",
-        type: "email",
-        autocomplete: "email",
-        classes: "govuk-input--width-20"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Website"
+          text: "Physical Form"
         },
         classes: "govuk-input--width-20",
-        id: "website",
-        name: "website"
+        id: "physical-form",
+        name: "physical-form"
       }) }}
 
-    {% endcall %}
+      {{ govukInput({
+        label: {
+          text: "Colour"
+        },
+        classes: "govuk-input--width-10",
+        id: "colour",
+        name: "colour"
+      }) }}
 
-      <a href="/product-details" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+      {{ govukTextarea({
+        name: "function",
+        id: "function",
+        label: {
+          text: "Function"
+        }
+      }) }}
+
+       {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "natural-ingredients",
+        name: "natural-ingredients",
+        fieldset: {
+          legend: {
+            text: "Does the product contain any “natural” ingredients?",
+            isPageHeading: false
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukTextarea({
+        name: "natural-ingredients-detail",
+        id: "natural-ingredients-detail",
+        label: {
+          text: "If “yes”, please provide further details"
+        }
+      }) }}
+
+       {{ govukTextarea({
+        name: "drinking-water-suppliers",
+        id: "drinking-water-suppliers",
+        hint: {
+          text: "We can only consider products that are offered for sale to UK public and private drinking water suppliers and will be used by them in the provision of drinking water supplies."
+        },
+        label: {
+          text: "Which public or private drinking water suppliers will be using this product?"
+        }
+      }) }}
+      {% endcall %}
+
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Continue
       </a>
-
-      <a href="/consultant" role="button" draggable="false" class="govuk-button govuk-button--secondary govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
-        Add Consultant
-      </a>
-
     </div>
 
     <div class="govuk-grid-column-one-third">
-
       <div class="app-step-nav-related app-step-nav-related--singular">
         <h2 class="app-step-nav-related__heading">
           <span class="app-step-nav-related__pretitle">Part of</span>
@@ -186,7 +240,7 @@
             </div>
           </li>
 
-          <li class="app-step-nav__step app-step-nav__step--active js-step" aria-current="step" data-show id="applicant-details" >
+          <li class="app-step-nav__step js-step" id="applicant-details">
             <div class="app-step-nav__header js-toggle-panel" data-position="3">
               <h3 class="app-step-nav__title">
                 <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -231,7 +285,7 @@
             </div>
           </li>
 
-          <li class="app-step-nav__step js-step" id="product-details" >
+          <li class="app-step-nav__step app-step-nav__step--active js-step" aria-current="step" data-show id="product-details" >
             <div class="app-step-nav__header js-toggle-panel" data-position="5">
               <h3 class="app-step-nav__title">
                 <span class="app-step-nav__circle app-step-nav__circle--number">
