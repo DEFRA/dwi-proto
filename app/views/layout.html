@@ -45,7 +45,25 @@
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+        href: "/search",
+        text: "Search"
+      },
+      {
+        href: "/start",
+        text: "New Application"
+      },
+      {
+        href: "#",
+        text: "Log Out"
+      }
+    ]
   }) }}
 {% endblock %}
 
