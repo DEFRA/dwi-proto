@@ -1,0 +1,177 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Search</h1>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          {{ govukInput({
+            label: {
+              text: "DWI Reference Number"
+            },
+            classes: "govuk-!-width-full",
+            id: "dwi-ref",
+            name: "dwi-ref"
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          {{ govukInput({
+            label: {
+              text: "Product Name"
+            },
+            classes: "govuk-!-width-full",
+            id: "product-name",
+            name: "product-name"
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          {{ govukSelect({
+            classes: "govuk-!-width-full",
+            id: "product-type",
+            name: "product-type",
+            label: {
+              text: "Product Type"
+            },
+            items: [
+              {
+                value: "published",
+                text: "Recently published"
+              },
+              {
+                value: "updated",
+                text: "Recently updated",
+                selected: true
+              },
+              {
+                value: "views",
+                text: "Most views"
+              },
+              {
+                value: "comments",
+                text: "Most comments"
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">Date Submitted</h2>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          {{ govukDateInput({
+            id: "date-submitted-from",
+            namePrefix: "date-submitted-from",
+            fieldset: {
+              legend: {
+                text: "Date from:"
+              }
+            }
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third">
+          {{ govukDateInput({
+            id: "date-submitted-to",
+            namePrefix: "date-submitted-to",
+            fieldset: {
+              legend: {
+                text: "Date to:"
+              }
+            }
+          }) }}
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          {{ govukButton({
+            text: "Search",
+            href: "/search-results",
+            isStartButton: false
+          }) }}
+        </div>
+      </div>
+    </div>
+
+
+    <div class="govuk-grid-column-full">
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Search Results</h2>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">DWI Ref No</th>
+          <th scope="col" class="govuk-table__header">Product Name</th>
+          <th scope="col" class="govuk-table__header">Date Approved</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--center">Re-Approve</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--center">Change</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--center">View/Edit</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">123</th>
+          <td class="govuk-table__cell">Product 1</td>
+          <td class="govuk-table__cell">10/12/2019</td>
+          <td class="govuk-table__cell govuk-table__cell--center">
+            <a href="#" class="govuk-link govuk-link--icon"><span class="govuk-visually-hidden">Re-Approve</span><span class="icon" aria-hidden="true">✔</span></a>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--center">
+            <a href="#" class="govuk-link govuk-link--icon"><span class="govuk-visually-hidden">Change</span><span class="icon" aria-hidden="true">✎</span></a>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--center">
+            <a href="#" class="govuk-link govuk-link--icon"><span class="govuk-visually-hidden">View / Edit</span><span class="icon" aria-hidden="true">🔎</span></a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">456</th>
+          <td class="govuk-table__cell">Product 2</td>
+          <td class="govuk-table__cell">10/11/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--center">
+            <a href="#" class="govuk-link govuk-link--icon"><span class="govuk-visually-hidden">Re-Approve</span><span class="icon" aria-hidden="true">✔</span></a>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--center">
+            <a href="#" class="govuk-link govuk-link--icon"><span class="govuk-visually-hidden">Change</span><span class="icon" aria-hidden="true">✎</span></a>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--center">
+            <a href="#" class="govuk-link govuk-link--icon"><span class="govuk-visually-hidden">View / Edit</span><span class="icon" aria-hidden="true">🔎</span></a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">789</th>
+          <td class="govuk-table__cell">Product 3</td>
+          <td class="govuk-table__cell">06/09/2019</td>
+          <td class="govuk-table__cell govuk-table__cell--center">
+            <a href="#" class="govuk-link govuk-link--icon"><span class="govuk-visually-hidden">Re-Approve</span><span class="icon" aria-hidden="true">✔</span></a>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--center">
+            <a href="#" class="govuk-link govuk-link--icon"><span class="govuk-visually-hidden">Change</span><span class="icon" aria-hidden="true">✎</span></a>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--center">
+            <a href="#" class="govuk-link govuk-link--icon"><span class="govuk-visually-hidden">View / Edit</span><span class="icon" aria-hidden="true">🔎</span></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+  </div>
+
+{% endblock %}
