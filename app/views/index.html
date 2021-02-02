@@ -8,37 +8,102 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
         Approval Of Products For Use With Drinking Water
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+      </h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Reprehenderit sint temporibus perferendis blanditiis esse delectus, eaque, sit dignissimos illo pariatur. At doloremque quo, rem quis blanditiis accusantium, doloribus voluptates dignissimos?</p>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Product Name</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Date Approved</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Product 4</th>
+            <td class="govuk-table__cell">Draft</td>
+            <td class="govuk-table__cell">-</td>
+            <td class="govuk-table__cell">
+              <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button">Edit</button>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Product 3</th>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">10/11/2021</td>
+            <td class="govuk-table__cell">
+              <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 govuk-!-margin-right-1" data-module="govuk-button">Renew</button>
+              <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button">Change</button>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Product 2</th>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">06/09/2022</td>
+            <td class="govuk-table__cell">
+              <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 govuk-!-margin-right-1" data-module="govuk-button">Renew</button>
+              <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button">Change</button>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Product 1</th>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">01/06/2021</td>
+            <td class="govuk-table__cell">
+              <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 govuk-!-margin-right-1" data-module="govuk-button">Renew</button>
+              <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button">Change</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h2 class="govuk-heading-l">Start new application</h2>
+
+      {{ govukSelect({
+        id: "application-type",
+        name: "application-type",
+        label: {
+          text: "Application Type"
+        },
+        hint: {
+          text: "Select application type and then click the start button to begin"
+        },
+        items: [
+          {
+            value: "application-type-1",
+            text: "Application Type 1"
+          },
+          {
+            value: "application-type-2",
+            text: "Application Type 2",
+            selected: true
+          },
+          {
+            value: "application-type-3",
+            text: "Application Type 3"
+          },
+          {
+            value: "application-type-4",
+            text: "Application Type 4"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Start",
+        href: "/start",
+        isStartButton: true
+      }) }}
+    </div>
+
+  </div>
 {% endblock %}
