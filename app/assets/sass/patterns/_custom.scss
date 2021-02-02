@@ -1,0 +1,133 @@
+// Modifies styling for radios and checkboxes to work with .NET Webforms HTML output
+.govuk-radios--inline,
+.govuk-checkboxes--inline {
+    margin-right: 80px;
+    float: left;
+    clear: none;
+}
+.govuk-radios:last-child,
+.govuk-radios:last-of-type,
+.govuk-checkboxes:last-child,
+.govuk-checkboxes:last-of-type {
+    margin-bottom: 0;
+}
+.govuk-radios,
+.govuk-checkboxes {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+}
+.govuk-radios,
+.govuk-checkboxes {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  display: block;
+  position: relative;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding-left: 40px;
+
+  &__input {
+    opacity: 1;
+  }
+
+  & > input {
+    opacity: 0;
+  }
+}
+
+.govuk-radios__input,
+.govuk-checkboxes__input {
+  > input {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: -2px;
+    left: -2px;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    opacity: 0;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+  }
+  > label {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 8px 15px 5px;
+    cursor: pointer;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    padding-left: 40px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+    margin-left: 16px;
+  }
+}
+
+.govuk-radios__input {
+  > label::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: transparent;
+  }
+  > label::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border: 10px solid #000;
+    border-radius: 50%;
+    opacity: 0;
+    background: #000;
+  }
+}
+
+.govuk-checkboxes__input {
+  > label::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    background: transparent;
+  }
+
+  > label::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    width: 23px;
+    height: 12px;
+    transform: rotate(-45deg);
+    border: solid;
+    border-width: 0 0 5px 5px;
+    border-top-color: #000;
+    opacity: 0;
+    background: transparent;
+  }
+}
+
+.govuk-radios__input > input:checked + label::after,
+.govuk-checkboxes__input > input:checked + label::after {
+    opacity: 1;
+}
