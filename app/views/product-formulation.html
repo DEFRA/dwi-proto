@@ -1,0 +1,396 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Product Formulation
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/step-by-step-nav.js"></script>
+<script type="text/javascript">
+  var $element = $('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+  stepByStepNavigation.start($element)
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/start">Start</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/notes">Important Notes</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/org-product">Organisation & Product Name</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/applicant-details">Applicant Details</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/product-details">Product Details</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Product Formulation</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Product Formulation</h1>
+
+      <p>Please supply (as appropriate), or arrange for others to supply, the following details for each of the components listed in 5.1.  Please do NOT ask your suppliers and others to send us confidential product information until our reference number has been provided.</p>
+
+      {{ govukDetails({
+        summaryText: "Notes",
+        html: '
+        <ol>
+          <li>Please complete copies of tables 5.1 and 5.2 for each material/component used in your test product, taking into account the guidance on information requirements set out below.</li>
+          <li>If you intend to source a material/component from more than one supplier, make sure you provide the details of ALL the alternatives you wish to use.</li>
+          <li>Please make sure you list ALL ingredients in each material – it is likely that you may not be able to supply this information for some or all of your materials. If this is the case please ask your supplier of the materials to submit this information, in confidence, to the DWI.</li>
+          <li>Please ensure that the chemical name of each ingredient (in addition to any trade name) is submitted, together with the appropriate CAS number.</li>
+          <li>For each ingredient please supply or arrange for others to supply the appropriate Material Safety Data Sheets (MSDS). Please note that MSDS that refer to “proprietary” or “confidential” ingredients are inadequate – DWI will require a full disclosure of all product ingredient formulations. Failure to provide this information will delay the processing of your application.</li>
+          <li>For each product/material the list of ingredients should add up to 100%.</li>
+          <li>Approval is given on the basis that there will be no changes in the ingredients of the product – both their nature and concentration. It is recognised, however, that for a minority of products there will be a degree of variability between batches of the product. In this case it is important that you provide an outline explanation of such variables.</li>
+          <li>If you need extra space please use additional copies of these tables.</li>
+        </ol>'
+      }) }}
+
+      <h2 class="govuk-heading-m">Guidance on product information requirements</h2>
+      <h3 class="govuk-heading-s">Description of the Manufacturing Process of the Product – Information requested</h3>
+      <ol>
+        <li>Amounts of reagents used including additives and catalysts</li>
+        <li>Details and specification of reagents, including Material Safety Data Sheets (MSDSs)</li>
+        <li>Description of the manufacturing process - order of additions & details of important process parameters</li>
+        <li>The chemical/physical reactions and any side reactions</li>
+        <li>Details of any product finishing processes</li>
+        <li>Any other relevant information</li>
+      </ol>
+
+      <h3 class="govuk-heading-s">Technical Specification for Each Component</h3>
+      <ol>
+        <li>You are responsible for providing complete detailed information of ALL components of the product formulation, including ALL constituents of each primary component that has been listed in Section 6.1.</li>
+        <li> Applicants may need to contact their suppliers to obtain this information.</li>
+        <li> DWI does not enter into confidentiality agreements but all product information is treated in confidence and it is used for the purposes of assessing this application for approval only. No product information is released to a third party without the authorisation of the manufacturer – see http://www.dwi.gov.uk/drinking-water-products/faqs/FAQ3.pdf.</li>
+        <li> Suppliers may send information direct to the DWI – see appropriate letters on the website - http://www.dwi.gov.uk/drinking-water-products/advice-and-approval/forms/letter.doc.</li>
+        <li>This information must be in ENGLISH and quoting the relevant applicant, product names and DWI reference number so that the information can be linked to the correct application for approval.</li>
+        <li>For each COMPONENT of the formulation please supply material safety data sheets and technical specification data that includes, as appropriate -</li>
+      </ol>
+
+      {{ govukTable({
+        caption: "Components",
+        firstCellIsHeader: false,
+        rows: [
+          [
+            {
+              text: "Trade Name"
+            },
+            {
+              text: "Melting and boiling points"
+            }
+          ],
+          [
+            {
+              text: "Chemical Name"
+            },
+            {
+              text: "Viscosity"
+            }
+          ],
+          [
+            {
+              text: "Chemical formula"
+            },
+            {
+              text: "Density"
+            }
+          ],
+          [
+            {
+              text: "CAS number(s)"
+            },
+            {
+              text: "Particle size"
+            }
+          ],
+          [
+            {
+              text: "Concentration, as a percentage of the whole"
+            },
+            {
+              text: "pH"
+            }
+          ],
+          [
+            {
+              text: "Vapour pressure"
+            },
+            {
+              text: "Odour"
+            }
+          ],
+          [
+            {
+              text: "Solubility in water"
+            },
+            {
+              text: "Flash point"
+            }
+          ],
+          [
+            {
+              text: "Appearance/colour"
+            },
+            {
+              text: "Impurities, as a percentage of the whole"
+            }
+          ],
+          [
+            {
+              text: "Any supporting toxicological information"
+            },
+            {
+              text: ""
+            }
+          ]
+        ]
+      }) }}
+
+      <h3 class="govuk-heading-s">Product Specific Information – Polyamines</h3>
+      <p>For POLYAMINES please indicate the residual amounts of:</p>
+      <ul>
+        <li>epichlorohydrin</li>
+        <li>1,3-dichloropropanol </li>
+        <li>2,3- dichloropropanol</li>
+        <li>3-monochloropropandiol</li>
+      </ul>
+      <p>and any other chloropropanols present in batches of the product.</p>
+
+      <p>This information should be given as (X±Y) ppm where X is the mean value and Y is the measurement of uncertainty.</p>
+
+      <p><b>Any other information relating to the application for approval of your product, not requested elsewhere on this form, should be provided along with this form and all other information requested.</b></p>
+
+
+      <a href="/components-formulation" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Continue
+      </a>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <div class="app-step-nav-related app-step-nav-related--singular">
+        <h2 class="app-step-nav-related__heading">
+          <span class="app-step-nav-related__pretitle">Part of</span>
+          <a href="/">
+            {{ serviceName }}
+          </a>
+        </h2>
+      </div>
+
+      <div id="step-by-step-navigation" data-module="gemstepnav" class="app-step-nav js-hidden" data-id="e01e924b-9c7c-4c71-8241-66a575c2f61f" data-show-text="show" data-hide-text="hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step js-step" id="important-notes">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 1
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Important Notes
+                </span>
+              </h3>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-important-notes-1">
+              <p class="app-step-nav__paragraph">Applications for the approval of chemicals for use with water intended for human consumption</p>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="organisation-product">
+            <div class="app-step-nav__header js-toggle-panel" data-position="2">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 2
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Organisation & Product Name
+                </span>
+              </h3>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-organisation-product-2">
+              <p class="app-step-nav__paragraph">Lorem ipsum</p>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="applicant-details">
+            <div class="app-step-nav__header js-toggle-panel" data-position="3">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 3
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Applicant Details
+                </span>
+              </h3>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-applicant-details-3">
+              <p class="app-step-nav__paragraph">Lorem ipsum</p>
+
+              <ol class="app-step-nav__list" data-length="1">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="3.1" class="app-step-nav__link js-link" href="#">Consultant Details (Optional)</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="product-details">
+            <div class="app-step-nav__header js-toggle-panel" data-position="4">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 4
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Product Details
+                </span>
+              </h3>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-product-details-4">
+              <p class="app-step-nav__paragraph">Lorem ipsum</p>
+
+              <ol class="app-step-nav__list" data-length="2">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="5.1" class="app-step-nav__link js-link" href="#">General Details – All Products</a>
+                </li>
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="5.2" class="app-step-nav__link js-link" href="#">Specific Product Details</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="manufacturers-instructions">
+            <div class="app-step-nav__header js-toggle-panel" data-position="5">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 5
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Manufacturer’s Official Instructions For Use (IFU)
+                </span>
+              </h3>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-manufacturers-instructions-5">
+              <p class="app-step-nav__paragraph">Lorem ipsum</p>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="manufacturer">
+            <div class="app-step-nav__header js-toggle-panel" data-position="6">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 6
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Manufacturer
+                </span>
+              </h3>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-manufacturer-6">
+              <p class="app-step-nav__paragraph">Lorem ipsum</p>
+
+              <ol class="app-step-nav__list " data-length="1">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="6.1" class="app-step-nav__link js-link" href="#">Name of Manufacturer and Place of Manufacture</a>
+                </li>
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="6.2" class="app-step-nav__link js-link" href="#">Manufacturing Quality Management System</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step app-step-nav__step--active js-step" aria-current="step" data-show id="product-formulation">
+            <div class="app-step-nav__header js-toggle-panel" data-position="7">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 7
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Product Formulation
+                </span>
+              </h3>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-product-formulation-7">
+              <p class="app-step-nav__paragraph">Lorem ipsum</p>
+
+              <ol class="app-step-nav__list " data-length="1">
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="7.1" class="app-step-nav__link js-link" href="/product-formulation">Guidance on product information requirements</a>
+                </li>
+                <li class="app-step-nav__list-item js-list-item ">
+                  <a data-position="7.2" class="app-step-nav__link js-link" href="/components-formulation">Full formulation of all components of your product.</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </div>
+  </div>
+{% endblock %}
