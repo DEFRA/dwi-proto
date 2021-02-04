@@ -1,0 +1,205 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Components Formulation
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/start">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/org-product">Organisation & Product Name</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/applicant-details">Applicant Details</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/product-details">Product Details</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/product-formulation">Product Formulation</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Components Formulation</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Components Formulation</h1>
+
+      <p>Please include ALL components and make sure that the total composition adds up to 100%.</p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Full formulation of all components of your product</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Component</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Trade Name</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Chemical Name</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">CAS Number</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">% by weight</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">1</th>
+            <td class="govuk-table__cell">Value: {{ data['tradename'] }}</td>
+            <td class="govuk-table__cell">{{ data['chemical-name'] }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['cas-number'] }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['weight'] }}</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">2</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">3</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">4</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">5</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">6</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">7</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">8</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">9</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">10</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">11</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">12</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-width-one-third">Total</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-width-full">100</td>
+          </tr>
+        </tbody>
+      </table>
+
+<!--       <h2 class="govuk-heading-m">Add component</h2>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukInput({
+            label: {
+              text: 'Trade Name'
+            },
+            id: "trade-name",
+            name: "trade-name"
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukInput({
+            label: {
+              text: 'Chemnical Name'
+            },
+            id: "chemical-name",
+            name: "chemical-name"
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukInput({
+            label: {
+              text: 'CAS Number'
+            },
+            id: "cas-number",
+            name: "cas-number"
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukInput({
+            id: "weight",
+            name: "weight",
+            label: {
+              text: "Weight"
+            }
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-full">
+          {{ govukButton({
+            text: "Add component",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+      </div> -->
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      {{ govukButton({
+        href: "#",
+        text: "Save and continue"
+      }) }}
+    </div>
+  </div>
+{% endblock %}
